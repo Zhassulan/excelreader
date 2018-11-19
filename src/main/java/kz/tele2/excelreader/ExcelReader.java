@@ -1,5 +1,6 @@
 package kz.tele2.excelreader;
 
+import kz.tele2.excelreader.interfaces.IExcelReader;
 import org.apache.poi.ss.usermodel.*;
 import java.io.File;
 import java.util.ArrayList;
@@ -8,12 +9,12 @@ import java.util.Iterator;
 import static org.apache.poi.ss.usermodel.CellType.*;
 
 /**
- *  Класс для чтения файла в формате Excel
+ *  Класс для чтения файла в формате Excel версий XLS и XLSX
  */
 public class ExcelReader implements IExcelReader {
 
     /**
-     *  Метод чтения файла
+     *  Метод чтения Excel файла
      * @param file объекти типа File
      * @return  Массив (строки) массивов (ячейки)
      * @throws Exception
@@ -59,6 +60,10 @@ public class ExcelReader implements IExcelReader {
         return null;
     }
 
+    /**
+     *  Распечатка значения ячейки
+     * @param cell
+     */
     private void printCellValue(Cell cell) {
         switch (cell.getCellType()) {
             case BOOLEAN:

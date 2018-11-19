@@ -1,5 +1,6 @@
 package kz.tele2.excelreader;
 
+import kz.tele2.excelreader.models.Payment;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +23,7 @@ public class AppTests {
             ObjectConverter oc = new ObjectConverter(arr);
             oc.processContent();
             PaymentService ps = new PaymentService();
-            ps.toFile(oc.getPayment());
+            ps.toFile((Payment)oc.getPayment(), "d:\\temp\\sample.json");
             System.out.println(ps.toJsonPrettyPrint(oc.getPayment()));
         } catch (IOException e) {
             e.printStackTrace();

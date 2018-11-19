@@ -1,5 +1,8 @@
 package kz.tele2.excelreader.models;
 
+/**
+ *  Класс строки таблицы платежей
+ */
 public class Item {
 
     private String num;

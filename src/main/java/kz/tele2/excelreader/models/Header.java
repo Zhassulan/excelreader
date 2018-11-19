@@ -1,5 +1,8 @@
 package kz.tele2.excelreader.models;
 
+/**
+ *  Класс шапки файла платежа
+ */
 public class Header {
 
     private String name_sender;

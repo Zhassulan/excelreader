@@ -1,37 +1,43 @@
 package kz.tele2.excelreader;
 
+import kz.tele2.excelreader.interfaces.IConverter;
 import kz.tele2.excelreader.models.Payment;
 import kz.tele2.excelreader.models.Header;
 import kz.tele2.excelreader.models.Item;
 
 import java.util.ArrayList;
 
-public class ObjectConverter {
+public class ObjectConverter implements IConverter {
 
     private ArrayList <ArrayList> content;
     private Payment payment;
-
-    public ArrayList<ArrayList> getContent() {
-        return content;
-    }
-
-    public void setContent(ArrayList<ArrayList> content) {
-        this.content = content;
-    }
-
-    public Payment getPayment() {
-        return payment;
-    }
-
-    public void setPayment(Payment payment) {
-        this.payment = payment;
-    }
 
     public ObjectConverter(ArrayList<ArrayList> content) {
         this.content = content;
     }
 
-    public void processContent()    {
+    @Override
+    public ArrayList<ArrayList> getContent() {
+        return content;
+    }
+
+    @Override
+    public Object getPayment() {
+        return payment;
+    }
+
+    @Override
+    public void setPayment(Object payment) {
+        this.payment = (Payment) payment;
+    }
+
+    @Override
+    public void setContent(ArrayList content) {
+        this.content = content;
+    }
+
+    @Override
+    public void processContent() {
         payment = new Payment();
         Header header = new Header();
         header.setName_sender(content.get(1).get(0).toString());
@@ -39,7 +45,6 @@ public class ObjectConverter {
         header.setPayment_docnum(content.get(4).get(0).toString());
         header.setPayment_date(content.get(5).get(0).toString());
         payment.setHeader(header);
-
         content.forEach(row -> {
             if (content.indexOf(row) > 7 && row.size() == 6) {
                 Item item = new Item();
@@ -52,8 +57,6 @@ public class ObjectConverter {
                 payment.addItem(item);
             }
         });
-
-        //System.out.println(payment);
     }
 
 }

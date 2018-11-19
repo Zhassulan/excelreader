@@ -4,14 +4,13 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import kz.tele2.excelreader.models.Payment;
 
 import java.io.File;
 import java.io.IOException;
 
-public class PaymentService {
+public class PaymentService <T>{
 
-    public String toJson(Payment payment) {
+    public String toJson(T payment) {
         ObjectMapper mapper = new ObjectMapper();
         try {
             return mapper.writeValueAsString(payment);
@@ -25,7 +24,7 @@ public class PaymentService {
         return null;
     }
 
-    public String toJsonPrettyPrint(Payment payment) {
+    public String toJsonPrettyPrint(T payment) {
         ObjectMapper mapper = new ObjectMapper();
         try {
             return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(payment);
@@ -39,10 +38,10 @@ public class PaymentService {
         return null;
     }
 
-    public void toFile(Payment payment) {
+    public void toFile(T payment, String outFilePath) {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            mapper.writeValue(new File("D:\\payment.json"), payment);
+            mapper.writeValue(new File(outFilePath), payment);
         } catch (JsonGenerationException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {
