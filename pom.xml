@@ -96,7 +96,7 @@
                 </executions>
             </plugin>
         </plugins>
-        <finalName>${artifactId}_${timestamp}</finalName>
+        <finalName>${project.artifactId}_${timestamp}</finalName>
     </build>
 
 </project>
