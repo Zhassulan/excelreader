@@ -1,4 +1,4 @@
-package kz.tele2.json.models;
+package kz.tele2.excelreader.models;
 
 public class Item {
 

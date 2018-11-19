@@ -1,14 +1,9 @@
-package kz.tele2.json;
+package kz.tele2.excelreader;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import kz.tele2.json.models.Payment;
-import kz.tele2.json.models.Header;
-import kz.tele2.json.models.Item;
+import kz.tele2.excelreader.models.Payment;
+import kz.tele2.excelreader.models.Header;
+import kz.tele2.excelreader.models.Item;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ObjectConverter {

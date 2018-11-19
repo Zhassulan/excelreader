@@ -1,6 +1,4 @@
-package kz.tele2.json.models;
-
-import java.util.Date;
+package kz.tele2.excelreader.models;
 
 public class Header {
 

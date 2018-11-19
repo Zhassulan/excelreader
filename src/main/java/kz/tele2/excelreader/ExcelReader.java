@@ -1,10 +1,7 @@
-package kz.tele2.excelparser;
+package kz.tele2.excelreader;
 
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
-
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -13,7 +10,7 @@ import static org.apache.poi.ss.usermodel.CellType.*;
 /**
  *  Класс для чтения файла в формате Excel
  */
-public class ExcelReader {
+public class ExcelReader implements IExcelReader {
 
     /**
      *  Метод чтения файла
@@ -62,7 +59,6 @@ public class ExcelReader {
         return null;
     }
 
-    /*
     private void printCellValue(Cell cell) {
         switch (cell.getCellType()) {
             case BOOLEAN:
@@ -89,5 +85,5 @@ public class ExcelReader {
         }
         System.out.print("\t");
     }
-    */
+
 }

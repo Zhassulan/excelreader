@@ -1,7 +1,5 @@
-package kz.tele2.excelparser;
+package kz.tele2.excelreader;
 
-import kz.tele2.json.ObjectConverter;
-import kz.tele2.json.PaymentService;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.jupiter.api.Test;
 
@@ -21,9 +19,6 @@ public class AppTests {
         ExcelReader reader = new ExcelReader();
         try {
             ArrayList <ArrayList> arr = reader.read(new File(SAMPLE_XLS_FILE_PATH));
-            /*arrRows.forEach(arrayList -> {
-                System.out.println(arrayList);
-            }); */
             ObjectConverter oc = new ObjectConverter(arr);
             oc.processContent();
             PaymentService ps = new PaymentService();
