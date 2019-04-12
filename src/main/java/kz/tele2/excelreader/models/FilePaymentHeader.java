@@ -3,7 +3,7 @@ package kz.tele2.excelreader.models;
 /**
  *  Класс шапки файла платежа
  */
-public class Header {
+public class FilePaymentHeader {
 
     private String name_sender;
     private String iin_bin_sender;

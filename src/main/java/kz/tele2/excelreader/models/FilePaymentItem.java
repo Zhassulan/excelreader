@@ -3,7 +3,7 @@ package kz.tele2.excelreader.models;
 /**
  *  Класс строки таблицы платежей
  */
-public class Item {
+public class FilePaymentItem {
 
     private String num;
     private String nomenclature;

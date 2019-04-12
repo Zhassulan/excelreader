@@ -32,8 +32,10 @@ public class ExcelReader implements IExcelReader {
             Iterator<Cell> cellIterator = row.cellIterator();
             while (cellIterator.hasNext()) {
                 Cell cell = cellIterator.next();
+                //printCellValue(cell);
                 if (cell.getCellType() == FORMULA) {
-                    arrCols.add(getFormulaValue(cell));
+                    Object formVal = getFormulaValue(cell);
+                    arrCols.add(formVal);
                 } else {
                     String cellValue = dataFormatter.formatCellValue(cell);
                     arrCols.add(cellValue);
@@ -89,6 +91,10 @@ public class ExcelReader implements IExcelReader {
                 System.out.print("");
         }
         System.out.print("\t");
+    }
+
+    public void printArr()  {
+        
     }
 
 }

@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 
-public class PaymentService <T>{
+public class FilePaymentService<T>{
 
     public String toJson(T payment) {
         ObjectMapper mapper = new ObjectMapper();
